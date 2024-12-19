@@ -1,0 +1,210 @@
+/* 全局样式 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lobster&display=swap'); /* 引入 fancy 字体 */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif; /* 使用更现代的字体 */
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  overflow-x: hidden; /* 禁止横向滚动 */
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 导航栏样式 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar ul li a {
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #f0f8ff;
+}
+
+/* 模块样式 */
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; /* 确保模块宽度适配所有屏幕 */
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.home {
+  background-color: #f0f8ff;
+  height: 70vh;
+}
+
+.home h2 {
+  font-family: 'Lobster', cursive; /* 使用更 fancy 的字体 */
+  font-size: 2.5rem; /* 缩小标题字体 */
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* About Me 模块 */
+.about {
+  background-color: #e6e6fa;
+  padding: 3rem 2rem;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-content {
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中图片和文字 */
+  gap: 2rem; /* 图片和文字之间的间距 */
+}
+
+.about-photo {
+  width: 150px; /* 设置图片宽度 */
+  height: 150px; /* 设置图片高度 */
+  border-radius: 50%; /* 将图片裁剪为圆形 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  object-fit: cover; /* 确保图片内容自适应裁剪区域 */
+}
+
+.about-content p {
+  flex: 1; /* 让文字占据剩余空间 */
+  font-size: 1.1rem; /* 适当调整文字大小 */
+  line-height: 1.6; /* 增加行间距 */
+  text-align: left; /* 文字左对齐 */
+}
+
+/* Projects 模块 */
+.projects {
+  background-color: #ffe4e1;
+  padding: 3rem 2rem;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.projects ul {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.projects li {
+  margin-bottom: 1.5rem;
+}
+
+.projects li h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects li p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* 联系模块 */
+.contact {
+  background-color: #f5f5dc;
+  padding: 3rem 2rem;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  font-size: 1.1rem;
+}
+
+/* 页脚样式 */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .navbar ul li a {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  .home h2, .about h2, .projects h2, .contact h2 {
+    font-size: 2rem;
+  }
+
+  .home p, .about p, .projects li p, .contact p {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    flex-direction: column; /* 小屏幕时图片和文字上下排列 */
+    text-align: center;
+  }
+
+  .about-photo {
+    margin-bottom: 1rem; /* 图片和文字之间的间距 */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar ul li a {
+    font-size: 0.8rem;
+  }
+
+  .home h2, .about h2, .projects h2, .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .home p, .about p, .projects li p, .contact p {
+    font-size: 0.9rem;
+  }
+}
