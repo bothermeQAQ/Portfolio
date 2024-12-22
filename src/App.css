@@ -1,9 +1,7 @@
 /* 全局样式 */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Lobster&display=swap'); /* 引入 fancy 字体 */
-
 body {
   margin: 0;
-  font-family: 'Poppins', Arial, sans-serif; /* 使用更现代的字体 */
+  font-family: 'Times New Roman', Times, serif; /* 修改为 Times New Roman */
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
@@ -13,6 +11,7 @@ body {
 a {
   text-decoration: none;
   color: #333;
+  transition: all 0.3s ease; /* 添加平滑过渡效果 */
 }
 
 ul {
@@ -36,14 +35,45 @@ ul {
   gap: 1.5rem;
 }
 
+/* 导航链接样式 */
 .navbar ul li a {
   color: #fff;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 1.3rem;
+  position: relative; /* 为伪元素定位 */
+  transition: all 0.3s ease;
+  font-family: 'Times New Roman', Times, serif; /* 使用 Times New Roman */
 }
 
+/* 鼠标悬停效果 */
 .navbar ul li a:hover {
-  color: #f0f8ff;
+  color: #f0f8ff; /* 字体颜色变浅 */
+  transform: scale(1.1); /* 放大动画 */
+}
+
+/* 鼠标悬停时下划线动画 */
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f0f8ff;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+/* 激活的链接样式 */
+.navbar ul li a.active {
+  color: #00bfff;
+  font-weight: 600; /* 字体加粗 */
+}
+
+.navbar ul li a.active::after {
+  width: 100%; /* 激活状态下下划线全宽 */
 }
 
 /* 模块样式 */
@@ -53,91 +83,91 @@ section {
   justify-content: center;
   align-items: center;
   width: 100vw; /* 确保模块宽度适配所有屏幕 */
-  padding: 2rem;
+  padding: 1rem 0; /* 减少上下间距 */
   box-sizing: border-box;
   text-align: center;
+  font-family: 'Times New Roman', Times, serif; /* 设置字体 */
 }
 
 /* Home 模块样式 */
 .home {
   background-color: #f0f8ff; /* 浅蓝色背景 */
-  height: 100vh; /* 全屏高度 */
+  height: calc(100vh - 60px); /* 减去导航栏高度 */
   display: flex;
   flex-direction: column; /* 垂直布局 */
   justify-content: center; /* 垂直居中内容 */
   align-items: center; /* 水平居中内容 */
   text-align: center; /* 文本居中 */
-  padding: 2rem; /* 页面内边距 */
-  box-sizing: border-box; /* 包括边框和内边距 */
+  padding: 2rem;
+  box-sizing: border-box; 
 }
 
 .home-content {
   display: flex;
   flex-direction: column; /* 照片和标题垂直排列 */
-  align-items: center; /* 居中对齐 */
-  margin-bottom: 1rem; /* 照片和文字的整体间距 */
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .home-photo {
-  width: 200px; /* 照片宽度 */
-  height: 200px; /* 照片高度 */
-  border-radius: 50%; /* 圆形照片 */
-  margin-bottom: 1rem; /* 照片与标题之间的间距 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-  object-fit: cover; /* 确保图片自适应圆形 */
-  border: 4px solid #e6e6fa; /* 浅紫色边框增加层次感 */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  border: 4px solid #e6e6fa;
 }
 
 .home h2 {
-  font-family: 'Lobster', cursive; /* 花体字 */
-  font-size: 3rem; /* 更大、更醒目的标题 */
-  color: #333; /* 深色标题 */
-  margin: 0; /* 移除默认外边距 */
+  font-size: 2.5rem; /* 调小标题字体大小 */
+  color: #333;
+  margin: 0;
 }
 
 .home p {
-  font-size: 1.2rem; /* 描述文字大小 */
-  max-width: 600px; /* 限制宽度 */
-  line-height: 1.6; /* 增加行间距 */
-  color: #555; /* 较浅的文字颜色 */
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  color: #555;
 }
 
 /* About Me 模块 */
 .about {
   background-color: #e6e6fa;
-  padding: 3rem 2rem;
+  padding: 2rem 0; /* 减少上下内边距 */
 }
 
 .about h2 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .about-content {
-  display: flex; /* 使用 Flexbox 布局 */
-  align-items: center; /* 垂直居中图片和文字 */
-  gap: 2rem; /* 图片和文字之间的间距 */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .about-photo {
-  width: 150px; /* 设置图片宽度 */
-  height: 150px; /* 设置图片高度 */
-  border-radius: 50%; /* 将图片裁剪为圆形 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-  object-fit: cover; /* 确保图片内容自适应裁剪区域 */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 
 .about-content p {
-  flex: 1; /* 让文字占据剩余空间 */
-  font-size: 1.1rem; /* 适当调整文字大小 */
-  line-height: 1.6; /* 增加行间距 */
-  text-align: left; /* 文字左对齐 */
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
 }
 
 /* Projects 模块 */
 .projects {
   background-color: #ffe4e1;
-  padding: 3rem 2rem;
+  padding: 2rem 0;
 }
 
 .projects h2 {
@@ -148,7 +178,6 @@ section {
 .projects ul {
   max-width: 700px;
   margin: 0 auto;
-  padding: 0;
 }
 
 .projects li {
@@ -168,7 +197,7 @@ section {
 /* 联系模块 */
 .contact {
   background-color: #f5f5dc;
-  padding: 3rem 2rem;
+  padding: 2rem 0;
 }
 
 .contact h2 {
@@ -201,7 +230,7 @@ section {
   }
 
   section {
-    padding: 1.5rem;
+    padding: 1rem 0;
   }
 
   .home h2, .about h2, .projects h2, .contact h2 {
@@ -213,12 +242,12 @@ section {
   }
 
   .about-content {
-    flex-direction: column; /* 小屏幕时图片和文字上下排列 */
+    flex-direction: column;
     text-align: center;
   }
 
   .about-photo {
-    margin-bottom: 1rem; /* 图片和文字之间的间距 */
+    margin-bottom: 1rem;
   }
 }
 
