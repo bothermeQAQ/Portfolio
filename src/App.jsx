@@ -4,7 +4,7 @@ import "./App.css";
 
 // 页面组件
 import Home from "./pages/Home";
-import About from "./pages/About";
+import About from "./pages/About";  // 引入About页面
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
@@ -35,7 +35,7 @@ function App() {
       {/* 路由配置 */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />  {/* 路由更新 */}
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
